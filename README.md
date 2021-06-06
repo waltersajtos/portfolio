@@ -1,2 +1,3 @@
-# portfolio-v2
-New portfolio website
+# Strapi application
+
+A quick description of your strapi application

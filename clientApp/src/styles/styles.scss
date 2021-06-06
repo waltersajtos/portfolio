@@ -1,0 +1,59 @@
+@import "./_variables.scss";
+
+body {
+  background-color: #09080B;
+  color: white;
+  font-family: $font-family;
+}
+
+h1 {
+  font-size: 88px;
+}
+
+h2 {
+  font-size: 44px
+}
+
+h3 {
+  font-size: 33px;
+  color: $text-secondary;
+}
+
+p {
+  font-size: 22px;
+  color: $text-secondary;
+}
+
+.call-to-action {
+  display: flex;
+  .bar {
+    width: 10px;
+    background-color: #F9224B;
+    margin-right: 15px;
+    transition: width ease-in 1s;
+  }
+
+  &hover {
+    .bar {
+      width: 100px;
+    }
+  }
+}
+
+@media(max-width: $breakpoint-mobile) {
+  h1 {
+    font-size: 37px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+}
