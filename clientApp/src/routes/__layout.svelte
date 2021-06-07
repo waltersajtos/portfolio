@@ -8,10 +8,7 @@
 <Hamburger bind:open/>
 <NavBar bind:open/>
 <div class="page">
-  {#if !open}
-
   <slot></slot>
-  {/if}
 </div>
 
 <style global lang="scss">

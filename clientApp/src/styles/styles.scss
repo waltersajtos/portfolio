@@ -24,13 +24,75 @@ p {
   color: $text-secondary;
 }
 
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 180px;
+
+    justify-content: center;
+
+    min-height: 100vh;
+
+    p {
+      max-width: 540px;
+      wrap-option: wrap;
+      line-height: 42px;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 5px;
+    min-height: 0;
+    align-items: flex-start;
+
+    .hero {
+      margin-left: 20px;
+      min-height: calc(100vh);
+
+      p {
+        line-height: 23px;
+        max-width: 280px;
+      }
+    }
+  }
+}
+
 .call-to-action {
   display: flex;
+  position: relative;
+  align-items: center;
+  color: white;
+  width: fit-content;
+  padding-right: 25px;
+  text-decoration: none;
+
   .bar {
+    position: absolute;
+    left: 0;
     width: 10px;
+    height: 130%;
     background-color: #F9224B;
     margin-right: 15px;
-    transition: width ease-in 1s;
+    transition: ease-in-out .3s;
+    z-index: -1;
+  }
+
+  &:hover {
+    .bar {
+      width: 100%;
+    }
+  }
+
+  h2 {
+    margin-left: 25px;
   }
 
   &hover {

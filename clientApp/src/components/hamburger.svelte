@@ -19,8 +19,15 @@
     top: 100px;
     right: 100px;
     transform: rotate(0deg);
-    transition: .5s ease-in-out;
+    transition: 1s ease-in-out;
     cursor: pointer;
+
+
+
+    @media(max-width: $breakpoint-mobile) {
+      top: 30px;
+      right: 30px;
+    }
 
     &.open {
       border-radius: 999px;

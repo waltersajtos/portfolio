@@ -1,24 +1,31 @@
 <script>
   export let open = false;
+
+  const closeNavigation = () => {
+    setTimeout(() => {
+      open = false;
+    }, 100)
+  }
 </script>
 
 <nav class="nav" class:open>
-  <div class="nav__content">
+  <div class="content">
     <div class="left">
 
     </div>
     <div class="right">
       <div class="list">
-        <div class="list-item"><a on:click={() => open = false} href=".">Home</a></div>
-        <div class="list-item"><a on:click={() => open = false} href="projects">Projects</a></div>
-        <div class="list-item"><a on:click={() => open = false} href="about">About</a></div>
-        <div class="list-item"><a on:click={() => open = false} href="contact">Contact</a></div>
+        <div class="list-item"><a on:click={closeNavigation} href=".">Home</a></div>
+        <div class="list-item"><a on:click={closeNavigation} href="projects">Projects</a></div>
+        <div class="list-item"><a on:click={closeNavigation} href="about">About</a></div>
+        <div class="list-item"><a on:click={closeNavigation} href="contact">Contact</a></div>
       </div>
     </div>
   </div>
 </nav>
 
 <style lang="scss">
+  @use "sass:math";
   @import "src/styles/variables";
 
   .nav {
@@ -30,12 +37,16 @@
     $transition--easing: cubic-bezier(.77, 0, .175, 1);
     $menu--items--count: 4;
 
+    @media(max-width: $breakpoint-mobile) {
+      $font--size--calc: calc(1vw);
+    }
+
     position: fixed;
+    z-index: 2;
+    pointer-events: none;
 
     &.open {
       visibility: visible;
-
-      z-index: 2;
 
       &:before, &:after {
         transform: translateX(0%) translateY(0%);
@@ -50,12 +61,13 @@
       }
 
       .list-item {
+        pointer-events: auto;
         opacity: 1;
         transform: translateX(0%);
         transition: opacity .3s ease, transform .3s ease, color .3s ease;
         @for $i from 0 through $menu--items--count {
           &:nth-child(#{$i}) {
-            transition-delay: $transition--length * $i / 8 + .5 + s;
+            transition-delay: math.div($transition--length * $i, 8) + .5 + s;
           }
         }
       }
@@ -73,6 +85,10 @@
     }
 
     &:after {
+      @media(max-width: $breakpoint-mobile) {
+        background: linear-gradient(180deg, rgba(36, 34, 43, 1) 0%, rgba(9, 8, 11, 1) 50%, rgba(254, 63, 63, 1) 50%, rgba(249, 34, 75, 1) 100%);
+      }
+
       background: linear-gradient(90deg, rgba(36, 34, 43, 1) 0%, rgba(9, 8, 11, 1) 50%, rgba(254, 63, 63, 1) 50%, rgba(249, 34, 75, 1) 100%);
       transition-delay: 0s;
     }
@@ -81,16 +97,22 @@
       transition-delay: .1s;
     }
 
-    &__content {
+    .content {
       position: fixed;
       width: $width;
       height: $height;
-      font-size: $font--size--calc;
+      font-size: $font--size--calc !important;
       font-weight: 200;
       cursor: pointer;
 
       display: grid;
       grid-template-columns: 1fr 1fr;
+
+      @media(max-width: $breakpoint-mobile) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
       .right {
         display: flex;
@@ -108,7 +130,9 @@
       }
 
       .left {
-
+        @media(max-width: $breakpoint-mobile) {
+          display: none;
+        }
       }
     }
 
