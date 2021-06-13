@@ -31,7 +31,6 @@
   "dependencies": {
     "@sendgrid/mail": "^7.4.4",
     "saos": "^1.2.0",
-    "sass": "^1.34.1",
-    "svelte-scrollto": "^0.2.0"
+    "sass": "^1.34.1"
   }
 }

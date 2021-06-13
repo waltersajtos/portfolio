@@ -1,5 +1,5 @@
 <script>
-  import CallToAction from "../callToAction.svelte";
+  import CallToAction from "./callToAction.svelte";
 
   export let open = false;
 
@@ -28,12 +28,12 @@
           <p>Golem#6969</p></div>
       </div>
       <div class="list-item">
-        <CallToAction title="Contact me" url="contact"/>
+        <CallToAction onRoute={closeNavigation} title="Contact me" url="contact"/>
       </div>
     </div>
     <div class="right">
       <div class="list">
-        <div class="list-item"><a on:click={closeNavigation} href="..">Home</a></div>
+        <div class="list-item"><a on:click={closeNavigation} href=".">Home</a></div>
         <div class="list-item"><a on:click={closeNavigation} href="projects">Projects</a></div>
         <div class="list-item"><a on:click={closeNavigation} href="about">About</a></div>
         <div class="list-item"><a on:click={closeNavigation} href="contact">Contact</a></div>
@@ -44,7 +44,7 @@
 
 <style lang="scss">
   @use "sass:math";
-  @import "../../styles/variables";
+  @import "../styles/variables";
 
   .nav {
     $transition--length: 1;
@@ -104,7 +104,7 @@
     }
 
     &:after {
-      @media(max-width: $breakpoint-mobile) {
+      @media(max-width: $breakpoint-tablet) {
         background: linear-gradient(120deg, rgba(254, 63, 63, 1), rgba(249, 34, 75, 1));
       }
 
@@ -127,7 +127,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
 
-      @media(max-width: $breakpoint-mobile) {
+      @media(max-width: $breakpoint-tablet) {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -149,7 +149,7 @@
       }
 
 
-      @media(min-width: $breakpoint-mobile) {
+      @media(max-width: $breakpoint-tablet) {
         .right .list-item {
           &:before {
             content: "";
@@ -180,7 +180,7 @@
         cursor: auto;
         margin-left: $page-padding;
 
-        @media(max-width: $breakpoint-mobile) {
+        @media(max-width: $breakpoint-tablet) {
           display: none;
         }
 
@@ -189,12 +189,12 @@
         }
 
         .list {
-          gap: 32px;
+          gap: 20px;
 
           .list-item {
             display: flex;
             align-items: center;
-            gap: 36px;
+            gap: 10px;
 
             em {
               font-size: 40px;

@@ -1,8 +1,8 @@
 <script lang="ts">
-  export let url, title;
+  export let url, title, onRoute;
 </script>
 
-<a class="call-to-action" href={url}>
+<a on:click={onRoute} class="call-to-action" href={url}>
   <div class="bar"></div>
   <h2>{title}</h2>
 </a>

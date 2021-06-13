@@ -8,14 +8,12 @@
   @import "../styles/variables";
 
   .arrows {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-
+    justify-content: flex-end;
     margin-top: auto;
+
 
     .arrow {
       color: transparent;
