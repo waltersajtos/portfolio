@@ -8,7 +8,7 @@ export default class EmailService {
 		}
 	}
 
-	public sendEmail({ name, email, message }) {
+	public sendEmail({ name, email, subject, message }) {
 		return axios.post('http://localhost:1337/email', {
 			to: 'waltersajtos@outlook.com',
 			text: message
