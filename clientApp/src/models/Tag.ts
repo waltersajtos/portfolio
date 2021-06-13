@@ -1,6 +1,6 @@
-import type {Image} from "./Image";
+import type { Image } from './Image';
 
 export interface Tag {
-  title: String;
-  icon: Image;
+	title: String;
+	icon: Image;
 }
