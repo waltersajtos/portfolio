@@ -1,13 +1,13 @@
 @import "./_variables.scss";
 
 body {
-  background-color: #09080B;
+  background: linear-gradient(115deg, #24222B, #09080B);
   color: white;
   font-family: $font-family;
 }
 
 h1 {
-  font-size: 88px;
+  font-size: 107px;
 }
 
 h2 {
@@ -15,18 +15,19 @@ h2 {
 }
 
 h3 {
-  font-size: 33px;
+  font-size: 52px;
   color: $text-secondary;
 }
 
 p {
-  font-size: 22px;
+  font-size: 38px;
   color: $text-secondary;
 }
 
 .page {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 2 * #{$page-padding});
+  padding: 90px;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -34,70 +35,38 @@ p {
   .hero {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    margin-left: 180px;
+    min-height: calc(100vh - 2 *#{$page-padding});
+    gap: 50px;
 
     justify-content: center;
 
-    min-height: 100vh;
+    h1 {
+      line-height: 106px;
+    }
 
     p {
-      max-width: 540px;
+      max-width: 755px;
       wrap-option: wrap;
-      line-height: 42px;
+      line-height: 52px;
     }
   }
 
   @media (max-width: $breakpoint-mobile) {
-    padding: 5px;
-    min-height: 0;
-    align-items: flex-start;
+    padding: 40px;
+    min-height: calc(100vh - 2 *#{$page-padding-mobile});
 
     .hero {
-      margin-left: 20px;
-      min-height: calc(100vh);
+      min-height: calc(100vh - 2 *#{$page-padding-mobile});
+      gap: 20px;
+
+      h1 {
+        line-height: 44px;
+      }
 
       p {
         line-height: 23px;
         max-width: 280px;
       }
-    }
-  }
-}
-
-.call-to-action {
-  display: flex;
-  position: relative;
-  align-items: center;
-  color: white;
-  width: fit-content;
-  padding-right: 25px;
-  text-decoration: none;
-
-  .bar {
-    position: absolute;
-    left: 0;
-    width: 10px;
-    height: 130%;
-    background-color: #F9224B;
-    margin-right: 15px;
-    transition: ease-in-out .3s;
-    z-index: -1;
-  }
-
-  &:hover {
-    .bar {
-      width: 100%;
-    }
-  }
-
-  h2 {
-    margin-left: 25px;
-  }
-
-  &hover {
-    .bar {
-      width: 100px;
     }
   }
 }
@@ -117,5 +86,9 @@ p {
 
   h3 {
     font-size: 19px;
+  }
+
+  .page {
+    padding: 30px;
   }
 }

@@ -1,5 +1,6 @@
 <script lang="ts">
   import {wordCloud} from "../services/icon.service.ts";
+  import CallToAction from "../components/callToAction.svelte";
 </script>
 
 
@@ -10,12 +11,12 @@
   <h3>Hi there! I'm Walter 👋</h3>
   <h1>A Full Stack <br>
     Web Developer</h1>
-  <p>I'm currently working as a developer for WeMakeIt, in the Netherlands. We make custom platforms for clients to
-    help grow their business.</p>
-  <a class="call-to-action" href="projects">
-    <div class="bar"></div>
-    <h2>View projects</h2>
-  </a>
+  <p>
+    I'm a software developer from the Netherlands.
+    I'm still in college but got a part-time job at WeMakeIt.
+    I enjoy challenging myself and learning new stuff every day.
+  </p>
+  <CallToAction title="View projects" url="projects"/>
 </div>
 
 <style lang="scss">

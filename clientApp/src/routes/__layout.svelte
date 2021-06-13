@@ -1,5 +1,5 @@
 <script lang="ts">
-  import NavBar from "../components/navigation.svelte";
+  import NavBar from "../components/navigation/navigation.svelte";
   import Hamburger from "../components/hamburger.svelte"
 
   let open = false;

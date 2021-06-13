@@ -10,42 +10,40 @@
   }
 </script>
 
-
-<div class="project">
-  <div class="description">
-    <h2>{project.name}</h2>
-    <p>{project.description}</p>
-    <div class="tags">
-      {#each project.tags as tag}
-        <div class="tag">
-          <div>
-            {#await getSvg(tag.icon.url)}
-            {:then svg}
-              {@html svg}
-            {/await}
+  <div class="project">
+    <div class="description">
+      <h2>{project.name}</h2>
+      <p>{project.description}</p>
+      <div class="tags">
+        {#each project.tags as tag}
+          <div class="tag">
+            <div>
+              {#await getSvg(tag.icon.url)}
+              {:then svg}
+                {@html svg}
+              {/await}
+            </div>
+            <p>{tag.title}</p>
           </div>
-          <p>{tag.title}</p>
-        </div>
-      {/each}
+        {/each}
+      </div>
+      <div class="links">
+        {#if project.githubUrl}
+          <a href={project.githubUrl} target="_blank">
+            <em class="fa fa-github"></em>
+          </a>
+        {/if}
+        {#if project.liveUrl}
+          <a href={project.liveUrl} target="_blank">
+            <em class="fa fa-globe"></em>
+          </a>
+        {/if}
+      </div>
     </div>
-    <div class="links">
-      {#if project.githubUrl}
-        <a href={project.githubUrl} target="_blank">
-          <em class="fa fa-github"></em>
-        </a>
-      {/if}
-      {#if project.liveUrl}
-        <a href={project.liveUrl} target="_blank">
-          <em class="fa fa-globe"></em>
-        </a>
-      {/if}
+    <div class="image">
+      <img src={getImageUrl(project.images[0].url)} alt=""/>
     </div>
   </div>
-  <div class="image">
-    <img src={getImageUrl(project.images[0].url)} alt=""/>
-  </div>
-</div>
-
 <style lang="scss">
   @import "../../styles/variables";
 
@@ -163,6 +161,7 @@
 
       .tags {
         height: 20px;
+
         .tag {
           min-width: 60px;
           max-width: 80px;

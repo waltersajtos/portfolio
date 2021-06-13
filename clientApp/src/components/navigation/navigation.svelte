@@ -1,4 +1,6 @@
 <script>
+  import CallToAction from "../callToAction.svelte";
+
   export let open = false;
 
   const closeNavigation = () => {
@@ -11,11 +13,27 @@
 <nav class="nav" class:open>
   <div class="content">
     <div class="left">
-
+      <div class="list-item">
+        <h2>Walter Sajtos</h2>
+        <p>The Netherlands</p>
+      </div>
+      <div class="list">
+        <div class="list-item"><em class="fa fa-envelope"></em>
+          <p>waltersajtos@outlook.com</p></div>
+        <div class="list-item"><em class="fab fa-github"></em>
+          <p>/waltersajtos</p></div>
+        <div class="list-item"><em class="fab fa-linkedin-in"></em>
+          <p>/in/waltersajtos</p></div>
+        <div class="list-item"><em class="fab fa-discord"></em>
+          <p>Golem#6969</p></div>
+      </div>
+      <div class="list-item">
+        <CallToAction title="Contact me" url="contact"/>
+      </div>
     </div>
     <div class="right">
       <div class="list">
-        <div class="list-item"><a on:click={closeNavigation} href=".">Home</a></div>
+        <div class="list-item"><a on:click={closeNavigation} href="..">Home</a></div>
         <div class="list-item"><a on:click={closeNavigation} href="projects">Projects</a></div>
         <div class="list-item"><a on:click={closeNavigation} href="about">About</a></div>
         <div class="list-item"><a on:click={closeNavigation} href="contact">Contact</a></div>
@@ -26,7 +44,7 @@
 
 <style lang="scss">
   @use "sass:math";
-  @import "src/styles/variables";
+  @import "../../styles/variables";
 
   .nav {
     $transition--length: 1;
@@ -35,7 +53,8 @@
     $height: 100vh;
     $font--size--calc: calc(2vw + 10px);
     $transition--easing: cubic-bezier(.77, 0, .175, 1);
-    $menu--items--count: 4;
+    $menu--items--count: 6;
+    overflow-y: hidden;
 
     @media(max-width: $breakpoint-mobile) {
       $font--size--calc: calc(1vw);
@@ -86,7 +105,7 @@
 
     &:after {
       @media(max-width: $breakpoint-mobile) {
-        background: linear-gradient(180deg, rgba(36, 34, 43, 1) 0%, rgba(9, 8, 11, 1) 50%, rgba(254, 63, 63, 1) 50%, rgba(249, 34, 75, 1) 100%);
+        background: linear-gradient(120deg, rgba(254, 63, 63, 1), rgba(249, 34, 75, 1));
       }
 
       background: linear-gradient(90deg, rgba(36, 34, 43, 1) 0%, rgba(9, 8, 11, 1) 50%, rgba(254, 63, 63, 1) 50%, rgba(249, 34, 75, 1) 100%);
@@ -114,7 +133,7 @@
         justify-content: center;
       }
 
-      .right {
+      .right, .left {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -129,9 +148,62 @@
         }
       }
 
+
+      @media(min-width: $breakpoint-mobile) {
+        .right .list-item {
+          &:before {
+            content: "";
+            position: absolute;
+            background: $font--color--active;
+            width: 0;
+            height: 0;
+            top: 100%;
+            transform: translate(0%, 0%);
+            transition: all .3s ease;
+            z-index: -1;
+          }
+
+          &:hover {
+            &:before {
+              height: 3px;
+              width: 100%;
+            }
+          }
+        }
+      }
+
       .left {
+        flex-direction: column;
+        gap: 70px;
+        align-items: flex-start;
+        justify-content: center;
+        cursor: auto;
+        margin-left: $page-padding;
+
         @media(max-width: $breakpoint-mobile) {
           display: none;
+        }
+
+        p {
+          font-size: 22px;
+        }
+
+        .list {
+          gap: 32px;
+
+          .list-item {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+
+            em {
+              font-size: 40px;
+            }
+
+            p {
+              font-size: 18px;
+            }
+          }
         }
       }
     }
@@ -149,24 +221,6 @@
       transform: translate(0%, 100%);
       transition: opacity .2s ease, transform .3s ease;
       margin-right: 25px;
-
-      &:before {
-        content: "";
-        position: absolute;
-        background: $font--color--active;
-        width: 20px;
-        height: 1px;
-        top: 100%;
-        transform: translate(0%, 0%);
-        transition: all .3s ease;
-        z-index: -1;
-      }
-
-      &:hover {
-        &:before {
-          width: 100%;
-        }
-      }
     }
   }
 </style>

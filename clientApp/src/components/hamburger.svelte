@@ -16,8 +16,8 @@
     width: 60px;
     height: 45px;
     position: absolute;
-    top: 100px;
-    right: 100px;
+    top: $page-padding;
+    right: $page-padding;
     transform: rotate(0deg);
     transition: 1s ease-in-out;
     cursor: pointer;
@@ -25,8 +25,9 @@
 
 
     @media(max-width: $breakpoint-mobile) {
-      top: 30px;
-      right: 30px;
+      width: 30px;
+      top: $page-padding-mobile;
+      right: $page-padding-mobile;
     }
 
     &.open {
@@ -54,7 +55,7 @@
         }
       }
       &:nth-child(2) {
-        top: 18px;
+        top: 12px;
 
         &.open {
           opacity: 0;
@@ -62,7 +63,7 @@
         }
       }
       &:nth-child(3) {
-        top: 36px;
+        top: 24px;
 
         &.open {
           top: 18px;
