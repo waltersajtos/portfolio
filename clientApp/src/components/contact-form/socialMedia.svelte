@@ -31,6 +31,10 @@
     flex-direction: column;
     gap: 60px;
 
+    @media(max-width: 1300px) {
+      order: 0;
+    }
+
     .name {
       color: white;
       font-size: 36px;

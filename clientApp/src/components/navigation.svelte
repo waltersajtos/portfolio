@@ -14,8 +14,8 @@
 	<div class="content">
 		<div class="left">
 			<div class="list-item">
-				<h2>Walter Sajtos</h2>
-				<p>The Netherlands</p>
+        <h2 class="name">Walter Sajtos</h2>
+        <p class="country">The Netherlands</p>
 			</div>
 			<div class="list">
 				<div class="list-item">
@@ -165,7 +165,7 @@
 				}
 			}
 
-			@media (max-width: $breakpoint-tablet) {
+			@media (min-width: $breakpoint-tablet) {
 				.right .list-item {
 					&:before {
 						content: '';
@@ -200,9 +200,14 @@
 					display: none;
 				}
 
-				p {
-					font-size: 22px;
-				}
+        .name {
+          color: white;
+          font-size: 36px;
+        }
+
+        .country {
+          font-size: 22px;
+        }
 
 				.list {
 					gap: 20px;

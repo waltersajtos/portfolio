@@ -42,7 +42,7 @@
 			opacity: 1;
 			left: 0;
 			transform: rotate(0deg);
-			transition: 0.25s ease-in-out;
+			transition: .5s ease-in-out;
 
 			&:nth-child(1) {
 				top: 0;

@@ -34,12 +34,14 @@
     </label>
     <label class="input" class:has-input={subject && subject.length > 0}>
       <label class="input-label" for="subject">Subject*</label>
-      <input class="input-field" bind:value={subject} id="subject" name="subject" required type="text" placeholder="Subject*"/>
+      <input class="input-field" bind:value={subject} id="subject" name="subject" required type="text"
+             placeholder="Subject*"/>
     </label>
   </div>
   <label class="input" class:has-input={message && message.length > 0}>
     <label class="input-label" for="message">Message*</label>
-    <textarea class="input-field" bind:value={message} cols="30" id="message" name="message" required rows="10" placeholder="Message*"></textarea>
+    <textarea class="input-field" bind:value={message} cols="30" id="message" name="message" required rows="10"
+              placeholder="Message*"></textarea>
   </label>
 
   <CallToAction url="" title="Submit" onRoute={submitForm}/>
@@ -49,14 +51,30 @@
   @import "src/styles/_variables.scss";
 
   form {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     gap: 30px;
+
+    @media(max-width: 1300px) {
+      order: 1;
+    }
+
+    @media(max-width: 600px) {
+      width: 90%;
+      gap: 20px;
+    }
 
     .row {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 50px;
+
+      @media(max-width: 600px) {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 20px
+      }
     }
 
     .input {
@@ -96,7 +114,7 @@
       display: block;
       width: 100%;
       padding: 0.94rem 0.8rem 0.8rem;
-      background-color: rgba(255,255,255,0.05);
+      background-color: rgba(255, 255, 255, 0.05);
       color: $text-secondary;
       appearance: none;
       transition: all 200ms ease-out;

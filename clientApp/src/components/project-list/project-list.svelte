@@ -26,9 +26,9 @@
 		if (picked.length === animations.length) picked = [];
 
 		let availableAnimations = animations.filter((animation) => !(picked.indexOf(animation) >= 0));
-		let pickedAnimation = availableAnimations[Math.floor(Math.random() * animations.length)];
-		picked.push(pickedAnimation);
+    let pickedAnimation = availableAnimations[Math.floor(Math.random() * availableAnimations.length)];
 
+		picked.push(pickedAnimation);
 		return pickedAnimation;
 	};
 
