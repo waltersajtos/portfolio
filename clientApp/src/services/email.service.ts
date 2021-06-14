@@ -1,17 +1,15 @@
-import sgMail from '@sendgrid/mail';
 import axios from 'axios';
 
 export default class EmailService {
-	constructor() {
-		if (import.meta.env.SEND_GRID_API_KEY) {
-			sgMail.setApiKey(import.meta.env.SEND_GRID_API_KEY as string);
-		}
-	}
 
-	public sendEmail({ name, email, subject, message }) {
-		return axios.post('http://localhost:1337/email', {
-			to: 'waltersajtos@outlook.com',
-			text: message
-		});
-	}
+  public sendEmail({name, email, subject, message}) {
+    const text = `Name: ${name}\n Email: ${email}\n Message: ${message}`;
+
+    return axios.post('http://localhost:1337/email', {
+      to: 'waltersajtos@outlook.com',
+      subject: subject,
+      text: text
+    })
+      .catch(err => console.error(err));
+  }
 }
