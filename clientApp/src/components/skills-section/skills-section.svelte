@@ -1,0 +1,41 @@
+<script lang="ts">
+  import type {Skill} from '/models/Skill';
+  import SkillComponent from "./skill.svelte";
+  import skillService from '../../services/skill.service.ts';
+  import {onMount} from "svelte";
+
+  let skills: Skill[] = [];
+  let service = new skillService();
+  let error = null;
+
+  onMount(async () => {
+    try {
+      service.getSkills().then((value) => (skills = value as Skill[]));
+    } catch (e) {
+      error = e;
+    }
+  });
+</script>
+
+<h1>My Skills</h1>
+{#if error !== null}
+  {error}
+{:else}
+  <div class="grid">
+    {#each skills as skill}
+      <SkillComponent skill="{skill}"/>
+    {/each}
+  </div>
+{/if}
+<style lang="scss">
+  h1 {
+    margin-top: 5.1rem;
+    margin-bottom: 5.1rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(500px,100%), 1fr));
+    grid-auto-rows: 1fr;
+    gap: 90px;
+  }
+</style>

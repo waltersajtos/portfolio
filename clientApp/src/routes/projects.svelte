@@ -14,7 +14,7 @@
 		Below you can see some of the projects I've been working on recently. Most of these are projects
 		that I was able to work on thanks to the Delta Excellence program.
 	</p>
-	<CallToAction title="Contact me" url="contact" />
+	<CallToAction title="About me" url="about" />
 	<Arrows />
 </div>
 

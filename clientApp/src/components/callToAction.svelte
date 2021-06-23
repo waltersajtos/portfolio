@@ -1,8 +1,8 @@
 <script lang="ts">
-	export let url, title, onRoute;
+	export let url, title, onRoute, alwaysButton;
 </script>
 
-<a class="call-to-action" href={url} on:click={onRoute}>
+<a class="call-to-action" class:alwaysButton href={url} on:click={onRoute}>
 	<div class="bar" />
 	<h2>{title}</h2>
 </a>
@@ -40,6 +40,13 @@
 				border-radius: 10px;
 			}
 		}
+
+    &.alwaysButton {
+      .bar {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
 
 		@media (max-width: $breakpoint-mobile) {
 			.bar {
