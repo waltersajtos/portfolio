@@ -16,6 +16,9 @@ services:
     container_name: portfolio-frontend
     restart: unless-stopped
     build: ./clientApp
+    environment:
+       - VITE_STRAPI_URL=${VITE_STRAPI_URL}
+       - SENDGRID_API_KEY=${SENDGRID_API_KEY}
     links:
        - "strapi"
     ports:
