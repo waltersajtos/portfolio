@@ -12,7 +12,7 @@
 
 <div class="tag">
 	<div class="icon">
-		{#await getSvg(tag.icon.url) then svg}
+		{#await getSvg(tag?.icon?.url) then svg}
 			{@html svg}
 		{/await}
 	</div>
