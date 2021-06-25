@@ -11,10 +11,12 @@ services:
       - 1337:1337
     volumes:
       - ./:/srv/app
-  
+
   frontend:
     container_name: portfolio-frontend
     restart: unless-stopped
     build: ./clientApp
+    links:
+       - "strapi"
     ports:
       - '3000:3000'
