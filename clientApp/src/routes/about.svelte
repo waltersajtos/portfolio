@@ -4,6 +4,10 @@
   import SkillsSection from "../components/skills-section/skills-section.svelte";
 </script>
 
+<svelte:head>
+  <title>About</title>
+</svelte:head>
+
 <div class="hero">
   <h1>About me</h1>
   <p>

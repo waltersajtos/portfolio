@@ -11,7 +11,6 @@
   let open = false;
   let y;
 </script>
-
 <script context="module">
   export const load = async ({page}) => ({
     props: {
@@ -19,6 +18,17 @@
     },
   })
 </script>
+
+<svelte:head>
+  <meta lang="en"/>
+  <meta name="description" content="JavaScript wizard, chaotic good">
+  <meta name="keyword" content="portfolio, javascript, developer">
+
+  <meta property="og:title" content="Walter Sajtos | Full Stack Developer"/>
+  <meta property="og:description" content="JavaScript wizard, chaotic good" />
+  <meta property="og:url" content="https://waltersajtos.com" />
+  <meta property="og:type" content="website" />
+</svelte:head>
 
 <Hamburger bind:open/>
 <NavBar bind:open/>

@@ -3,6 +3,10 @@
 	import CallToAction from '../components/callToAction.svelte';
 </script>
 
+<svelte:head>
+  <title>Walter Sajtos</title>
+</svelte:head>
+
 <div class="background">
 	{@html wordCloud}
 </div>
