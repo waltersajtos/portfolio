@@ -26,14 +26,11 @@
 
   .tag {
     background: $accent-color-blue;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
     gap: 10px;
     height: 100%;
     padding: 0 10px;
     border-radius: 9px;
-    width: fit-content;
-    width: -moz-fit-content;
 
     p {
       display: flex;
@@ -42,19 +39,26 @@
       font-weight: bold;
       font-size: 14px;
       color: white;
-      text-align: center;
       min-height: 0;
+      min-width: 0;
+      flex-grow: 1;
     }
 
     .icon {
       display: flex;
+      flex-wrap: wrap;
       justify-content: flex-start;
       align-items: center;
       min-height: 0;
       min-width: 0;
+      width: fit-content;
+      width: -moz-fit-content;
+      overflow: hidden;
 
       :global(svg) {
-        height: 80%;
+        display: block;
+        height: auto;
+        width: 30px;
       }
     }
   }
