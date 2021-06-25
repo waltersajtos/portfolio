@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { wordCloud } from '../services/icon.service.ts';
+	import { wordCloud } from '../services/icon.service.js';
 	import CallToAction from '../components/callToAction.svelte';
 </script>
 

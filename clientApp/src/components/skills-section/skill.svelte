@@ -7,8 +7,6 @@
 
 
   const getSvg = async (url: string) => {
-
-    console.log(skill)
     const response = await axios.get(getImageUrl(url));
     return response.data;
   };

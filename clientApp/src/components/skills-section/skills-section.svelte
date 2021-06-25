@@ -1,16 +1,14 @@
 <script lang="ts">
-  import type {Skill} from '/models/Skill';
   import SkillComponent from "./skill.svelte";
-  import skillService from '../../services/skill.service.ts';
+  import {getSkills} from '../../services/skill.service.js';
   import {onMount} from "svelte";
 
-  let skills: Skill[] = [];
-  let service = new skillService();
+  let skills = [];
   let error = null;
 
   onMount(async () => {
     try {
-      service.getSkills().then((value) => (skills = value as Skill[]));
+      getSkills().then((value) => (skills = value.data));
     } catch (e) {
       error = e;
     }

@@ -1,6 +1,6 @@
 <script lang="ts">
   import ContactForm from "./contactForm.svelte";
-  import SocialMedia from "./SocialMedia.svelte";
+  import SocialMedia from "./socialMedia.svelte";
 </script>
 
 <div class="wrapper">

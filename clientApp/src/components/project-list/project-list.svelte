@@ -2,13 +2,11 @@
 	import { onMount } from 'svelte';
 	import Saos from 'saos';
 
-	import type { Project } from '/models/Project';
+	import {getProjects} from '../../services/project.service.js';
 
-	import projectService from '../../services/project.service.ts';
 	import ProjectComponent from '../../components/project-list/project.svelte';
 
-	let projects: Project[] = [];
-	let service = new projectService();
+	let projects = [];
 	let error = null;
 
 	const animations = [
@@ -34,7 +32,7 @@
 
 	onMount(async () => {
 		try {
-			service.getProjects().then((value) => (projects = value as Project[]));
+			getProjects().then((value) => (projects = value.data));
 		} catch (e) {
 			error = e;
 		}

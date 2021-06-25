@@ -1,6 +1,3 @@
-import * as qs from 'qs';
-import type { PathLike } from 'fs';
-
 export const apiConfig = {
 	returnRejectedPromiseOnError: true,
 	withCredentials: true,
@@ -13,6 +10,5 @@ export const apiConfig = {
 			'Content-Type': 'application/json',
 			Accept: 'application/json'
 		}
-	},
-	paramsSerializer: (params: PathLike) => qs.stringify(params, { indices: false })
+	}
 };
