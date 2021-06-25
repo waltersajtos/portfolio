@@ -1,3 +1,3 @@
 export default function getImageUrl(imageUrl) {
-	return `http://localhost:1337${imageUrl}`;
+	return import.meta.env.VITE_STRAPI_URL+imageUrl;
 }
