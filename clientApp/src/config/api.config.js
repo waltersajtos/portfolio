@@ -2,7 +2,7 @@ export const apiConfig = {
 	returnRejectedPromiseOnError: true,
 	withCredentials: true,
 	timeout: 30000,
-	baseURL: 'http://localhost:1337',
+	baseURL: import.meta.env.VITE_STRAPI_URL,
 	headers: {
 		common: {
 			'Cache-Control': 'no-cache, no-store, must-revalidate',
