@@ -18,22 +18,28 @@
         <p class="country">The Netherlands</p>
 			</div>
 			<div class="list">
-				<div class="list-item">
-					<em class="fa fa-envelope" />
-					<p>waltersajtos@outlook.com</p>
-				</div>
-				<div class="list-item">
-					<em class="fab fa-github" />
-					<p>/waltersajtos</p>
-				</div>
-				<div class="list-item">
-					<em class="fab fa-linkedin-in" />
-					<p>/in/waltersajtos</p>
-				</div>
-				<div class="list-item">
-					<em class="fab fa-discord" />
-					<p>Golem#6969</p>
-				</div>
+        <div class="list-item">
+          <em class="fa fa-envelope"/>
+          <a href="mailto:waltersajtos@outlook.com">
+            <p>waltersajtos@outlook.com</p>
+          </a>
+        </div>
+        <div class="list-item">
+          <em class="fab fa-github"/>
+          <a href="https://github.com/waltersajtos" target="_blank">
+            <p>/waltersajtos</p>
+          </a>
+        </div>
+        <div class="list-item">
+          <em class="fab fa-linkedin-in"/>
+          <a href="https://linkedin.com/in/waltersajtos" target="_blank">
+            <p>/in/waltersajtos</p>
+          </a>
+        </div>
+        <div class="list-item">
+          <em class="fab fa-discord"/>
+          <p>Golem#6969</p>
+        </div>
 			</div>
 			<div class="list-item">
 				<CallToAction onRoute={closeNavigation} title="Contact me" url="contact" />
@@ -203,6 +209,7 @@
         .name {
           color: white;
           font-size: 36px;
+          margin-bottom: 10px;
         }
 
         .country {
@@ -224,6 +231,12 @@
 						p {
 							font-size: 18px;
 						}
+
+            a {
+              text-decoration: underline;
+              text-decoration-color: $text-secondary;
+              text-decoration-thickness: 2px;
+            }
 					}
 				}
 			}
