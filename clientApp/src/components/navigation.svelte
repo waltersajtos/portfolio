@@ -203,6 +203,7 @@
         .name {
           color: white;
           font-size: 36px;
+          margin-bottom: 10px;
         }
 
         .country {
