@@ -27,7 +27,7 @@
       gap: 100px
     }
 
-    @media(max-width: 600px) {
+    @media(max-width: 1000px) {
       flex-wrap: nowrap;
       height: auto;
       margin-top: 0;

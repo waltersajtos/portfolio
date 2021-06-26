@@ -6,15 +6,21 @@
   <div class="list">
     <div class="list-item">
       <em class="fa fa-envelope"/>
-      <p>waltersajtos@outlook.com</p>
+      <a href="mailto:waltersajtos@outlook.com">
+        <p>waltersajtos@outlook.com</p>
+      </a>
     </div>
     <div class="list-item">
       <em class="fab fa-github"/>
-      <p>/waltersajtos</p>
+      <a href="https://github.com/waltersajtos" target="_blank">
+        <p>/waltersajtos</p>
+      </a>
     </div>
     <div class="list-item">
       <em class="fab fa-linkedin-in"/>
-      <p>/in/waltersajtos</p>
+      <a href="https://linkedin.com/in/waltersajtos" target="_blank">
+        <p>/in/waltersajtos</p>
+      </a>
     </div>
     <div class="list-item">
       <em class="fab fa-discord"/>
@@ -61,6 +67,10 @@
 
         p {
           font-size: 18px;
+        }
+
+        a {
+          text-decoration-color: $text-secondary;
         }
       }
     }

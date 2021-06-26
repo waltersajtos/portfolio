@@ -16,13 +16,14 @@
 		</div>
 		<div class="links">
 			{#if project.githubUrl}
-				<a href={project.githubUrl} target="_blank">
+				<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="github">
 					<em class="fa fa-github" />
 				</a>
 			{/if}
 			{#if project.liveUrl}
-				<a href={project.liveUrl} target="_blank">
+				<a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label="live-url">
 					<em class="fa fa-globe" />
+          <span style="display: none">LiveUrl</span>
 				</a>
 			{/if}
 		</div>
@@ -83,9 +84,10 @@
 			min-height: 0;
 
 			img {
+        width: 100%;
+        height: 100%;
 				max-height: 100%;
 				max-width: 100%;
-				height: auto;
 				border-radius: 9px;
 			}
 		}

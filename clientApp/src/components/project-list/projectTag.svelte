@@ -58,6 +58,7 @@
       :global(svg) {
         display: block;
         height: auto;
+        max-height: 90%;
         width: 30px;
       }
     }

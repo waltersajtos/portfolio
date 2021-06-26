@@ -4,6 +4,7 @@
   import {notifier} from '@beyonk/svelte-notifications';
   import {bindClass, form} from 'svelte-forms';
 
+
   const mailClient = new mailService();
 
   let name, email, subject, message = "";
@@ -11,7 +12,7 @@
     name: {value: name, validators: ['required']},
     email: {value: email, validators: ['required', 'email']},
     subject: {value: subject, validators: ['required']},
-    message: {value: message, validators: ['required', 'min:10']}
+    message: {value: message, validators: ['required']}
   }), {
     initCheck: false,
     validateOnChange: false,
@@ -27,7 +28,9 @@
   };
 
   const submitForm = () => {
-    if (contactForm.validate()) {
+    contactForm.validate()
+    if ($contactForm.valid) {
+      contactForm.reset()
       sendEmail();
     } else {
       notifier.danger('Please fill out all fields')
@@ -77,21 +80,22 @@
                placeholder="Subject*"/>
       </label>
     </div>
-    <div>
-      {#if $contactForm?.fields.message.errors.includes('required')}
-        <p class="error">Message is required</p>
-      {/if}
-      <label class="input" class:has-input={message && message.length > 0}>
-        <label class="input-label" for="message">Message*</label>
-        <textarea class="input-field" bind:value={message} use:bindClass={{form:contactForm}} cols="30" id="message"
-                  name="message"
-                  rows="10"
-                  placeholder="Message*"></textarea>
-      </label>
-    </div>
-    <div class:disabled={!$contactForm?.valid}>
-      <CallToAction url="" title="Submit" onRoute={submitForm}/>
-    </div>
+  </div>
+  <div>
+    {#if $contactForm?.fields.message.errors.includes('required')}
+      <p class="error">Message is required</p>
+    {/if}
+    <label class="input" class:has-input={message && message.length > 0}>
+      <label class="input-label" for="message">Message*</label>
+      <textarea class="input-field" bind:value={message} use:bindClass={{form:contactForm}} id="message"
+                name="message"
+                rows="10"
+                placeholder="Message*"></textarea>
+    </label>
+  </div>
+  <div>
+    <CallToAction url="" title="Submit" onRoute={submitForm}/>
+  </div>
 
 </form>
 
@@ -100,11 +104,17 @@
 
   form {
     display: inline-flex;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 30px;
 
     @media(max-width: 1300px) {
+      width: 50%;
       order: 1;
+    }
+
+    @media(max-width: 1000px) {
+      width: 100%;
     }
 
     @media(max-width: 600px) {
@@ -123,6 +133,11 @@
         grid-template-rows: 1fr 1fr 1fr;
         gap: 20px
       }
+    }
+
+    textarea {
+      font-family: inherit;
+      font-size: inherit;
     }
 
     .input {

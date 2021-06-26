@@ -29,11 +29,17 @@
   h1 {
     margin-top: 5.1rem;
     margin-bottom: 5.1rem;
+    white-space: nowrap;
   }
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(500px,100%), 1fr));
+    //grid-template-columns: repeat(auto-fit, minmax(min(500px,100%), 1fr));
     grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 90px;
+
+    @media(max-width:1400px) {
+      grid-template-columns: auto;
+    }
   }
 </style>
