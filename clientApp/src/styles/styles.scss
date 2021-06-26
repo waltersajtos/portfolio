@@ -1,5 +1,25 @@
 @import './_variables.scss';
 
+* {
+  //scrolbar styling firefox
+  scrollbar-color: $text-secondary white;
+  scrollbar-width: thin;
+
+  //scrollbar styling webkit
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $text-secondary;
+  }
+}
+
 body {
 	background: linear-gradient(115deg, #24222b, #09080b);
 	color: white;
