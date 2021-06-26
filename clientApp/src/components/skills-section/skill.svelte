@@ -58,6 +58,7 @@
         height: 25px;
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 20px;
       }
     }
