@@ -2,7 +2,7 @@
 	export let url, title, onRoute, alwaysButton;
 </script>
 
-<a class="call-to-action" class:alwaysButton href={url} on:click={onRoute}>
+<a class="call-to-action" class:alwaysButton href={url} on:click={onRoute} rel="noreferrer noopener">
 	<div class="bar" />
 	<h2>{title}</h2>
 </a>
