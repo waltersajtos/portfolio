@@ -6,19 +6,19 @@
   <div class="list">
     <div class="list-item">
       <em class="fa fa-envelope"/>
-      <a href="mailto:waltersajtos@outlook.com">
+      <a href="mailto:waltersajtos@outlook.com" rel="noopener noreferrer">
         <p>waltersajtos@outlook.com</p>
       </a>
     </div>
     <div class="list-item">
       <em class="fab fa-github"/>
-      <a href="https://github.com/waltersajtos" target="_blank">
+      <a href="https://github.com/waltersajtos" target="_blank" rel="noopener noreferrer">
         <p>/waltersajtos</p>
       </a>
     </div>
     <div class="list-item">
       <em class="fab fa-linkedin-in"/>
-      <a href="https://linkedin.com/in/waltersajtos" target="_blank">
+      <a href="https://linkedin.com/in/waltersajtos" target="_blank" rel="noopener noreferrer">
         <p>/in/waltersajtos</p>
       </a>
     </div>
