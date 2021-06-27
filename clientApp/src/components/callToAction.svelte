@@ -2,7 +2,7 @@
 	export let url, title, onRoute, alwaysButton;
 </script>
 
-<a class="call-to-action" class:alwaysButton href={url} on:click={onRoute}>
+<a class="call-to-action" class:alwaysButton href={url} on:click={onRoute} rel="noreferrer noopener">
 	<div class="bar" />
 	<h2>{title}</h2>
 </a>
@@ -28,7 +28,7 @@
 			width: 10px;
 			max-width: 100%;
 			height: 140%;
-			background-color: #f9224b;
+			background-color: $accent-color-pink;
 			margin-right: 15px;
 			transition: ease-in-out 0.3s;
 			z-index: -1;
