@@ -1,4 +1,4 @@
-FROM node:16
+FROM mhart/alpine-node:16
 
 # install dependencies
 WORKDIR /clientApp
@@ -14,7 +14,7 @@ RUN npm run build
 # Only copy over the Node pieces we need
 # ~> Saves 35MB
 ###
-FROM node:16
+FROM mhart/alpine-node:slim-16
 
 WORKDIR /clientApp
 COPY --from=0 /clientApp .
