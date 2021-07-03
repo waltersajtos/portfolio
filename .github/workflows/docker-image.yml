@@ -5,13 +5,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+      VITE_STRAPI_URL: ${{ secrets.VITE_STRAPI_URL }}
     steps:
       - uses: actions/checkout@v2
       - name: Build docker image
         run: docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-frontend:latest ./clientApp && docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-backend:latest .
-        env:
-          SENDGRID_API_KEY: ${{ SENDGRID_API_KEY }}
-          VITE_STRAPI_URL: ${{ VITE_STRAPI_URL }}
       - name: Docker login
         run:  docker login ${{ secrets.DOCKER_REGISTRY }}/v2 -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Push images to Dockerhub
