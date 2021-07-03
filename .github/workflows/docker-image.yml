@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build docker image
-        run: docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-frontend:latest /client && docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-backend:latest .
+        run: docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-frontend:latest /clientApp && docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-backend:latest .
       - name: Docker login
         run:  docker login ${{ secrets.DOCKER_REGISTRY }}/v2 -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Push images to Dockerhub
