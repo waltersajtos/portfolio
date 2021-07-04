@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Create .env file
-        run: touch .env.production && echo SENDGRID_API_KEY=${{ secrets.SENDGRID_API_KEY }} >> .env.production && echo VITE_PUBLIC_STRAPI_URL=${{ secrets.VITE_STRAPI_URL }}
+        run: touch clientApp/.env && echo SENDGRID_API_KEY=${{ secrets.SENDGRID_API_KEY }} >> clientApp/.env && echo VITE_PUBLIC_STRAPI_URL=${{ secrets.VITE_STRAPI_URL }}
       - name: Build docker image
         run: docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-frontend:latest ./clientApp && docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-backend:latest .
       - name: Docker login
