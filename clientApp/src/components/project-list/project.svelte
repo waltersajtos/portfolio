@@ -102,6 +102,7 @@
       p {
         font-size: 22px;
         max-width: 96vw;
+        margin: 0;
       }
 
       .tags {
