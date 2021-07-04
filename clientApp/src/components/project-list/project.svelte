@@ -78,10 +78,6 @@
       .description {
         max-height: none !important;
       }
-
-      .tags {
-        height: 20px;
-      }
     }
 
     .description {
@@ -106,7 +102,6 @@
       }
 
       .tags {
-        height: 38px;
         display: flex;
         align-items: center;
         flex-wrap: wrap;

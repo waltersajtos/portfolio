@@ -28,7 +28,7 @@
     background: $accent-color-blue;
     display: flex;
     gap: 10px;
-    height: 100%;
+    height: 30px;
     padding: 0 10px;
     border-radius: 9px;
 
