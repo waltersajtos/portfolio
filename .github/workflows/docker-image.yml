@@ -10,8 +10,10 @@ jobs:
       VITE_STRAPI_URL: ${{ secrets.VITE_STRAPI_URL }}
     steps:
       - uses: actions/checkout@v2
+      - name: Create .env file
+        run: touch .env && echo SENDGRID_API_KEY=${{ secrets.SENDGRID_API_KEY }} >> .env && echo VITE_STRAPI_URL=${{ secrets.VITE_STRAPI_URL }}
       - name: Build docker image
-        run: docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-frontend:latest --build-arg SENDGRID_API_KEY VITE_STRAPI_URL ./clientApp && docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-backend:latest .
+        run: docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-frontend:latest ./clientApp && docker build -t ${{ secrets.DOCKER_REGISTRY }}/portfolio-backend:latest .
       - name: Docker login
         run:  docker login ${{ secrets.DOCKER_REGISTRY }}/v2 -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Push images to Dockerhub
