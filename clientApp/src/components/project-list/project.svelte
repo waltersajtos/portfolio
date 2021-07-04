@@ -75,25 +75,14 @@
         max-width: 90vw;
       }
 
+      .description {
+        max-height: none !important;
+      }
+
       .tags {
         height: 20px;
       }
     }
-
-    //.image {
-    //  display: flex;
-    //  align-items: center;
-    //  justify-content: center;
-    //  min-height: 0;
-    //
-    //  img {
-    //    width: auto;
-    //    height: 100%;
-    //    max-height: 600px;
-    //    max-width: 100%;
-    //    border-radius: 9px;
-    //  }
-    //}
 
     .description {
       display: flex;

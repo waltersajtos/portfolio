@@ -40,5 +40,6 @@
     height: auto;
     object-fit: cover;
     aspect-ratio: 16 / 9;
+    border-radius: 13px;
   }
 </style>
