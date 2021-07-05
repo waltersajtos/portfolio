@@ -38,7 +38,7 @@
   :global(.carousel-item img) {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    object-fit: fill;
     aspect-ratio: 16 / 9;
     border-radius: 13px;
   }
