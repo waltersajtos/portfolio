@@ -41,6 +41,7 @@
       color: white;
       min-height: 0;
       min-width: 0;
+      margin-bottom: 0;
       flex-grow: 1;
     }
 
