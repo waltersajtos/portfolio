@@ -9,7 +9,7 @@
 </script>
 
 {#if items.length > 0}
-  <div id={`s-${project.id}`} class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div id={`s-${project.id}`} class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-indicators">
       {#each items as item, index}
         <button type="button" data-bs-target={`#s-${project.id}`} data-bs-slide-to={`${index}`} class={index === 0 ? 'active' : null}
@@ -35,6 +35,8 @@
 {/if}
 
 <style lang="scss">
+  @import "../../styles/variables";
+
   :global(.carousel-item img) {
     width: 100%;
     height: auto;
