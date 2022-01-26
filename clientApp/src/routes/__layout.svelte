@@ -12,9 +12,9 @@
   let y;
 </script>
 <script context="module">
-  export const load = async ({page}) => ({
+  export const load = async ({url, params}) => ({
     props: {
-      key: page.path,
+      key: url,
     },
   })
 </script>

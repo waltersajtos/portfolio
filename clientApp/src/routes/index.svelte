@@ -17,8 +17,8 @@
 		Web Developer
 	</h1>
 	<p>
-		I'm a software developer from the Netherlands. I'm still in college but got a part-time job at
-		WeMakeIt. I enjoy challenging myself and learning new stuff every day.
+    I'm a software developer from the Netherlands. I'm still in college but I work part-time as engineer at <a href="http://crowdled.net" target="_blank">CrowdLED</a>.
+    I enjoy challenging myself and learning new stuff every day.
 	</p>
 	<CallToAction title="View projects" url="projects" />
 </div>
@@ -37,6 +37,10 @@
 		bottom: 40px;
 		left: 600px;
 	}
+
+  a {
+    color: $text-secondary;
+  }
 
 	@media (max-width: $breakpoint-mobile) {
 		.background {

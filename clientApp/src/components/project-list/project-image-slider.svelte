@@ -5,7 +5,6 @@
 
   let items = project?.images?.map(image => getImageUrl(image.url));
 
-  console.log(project)
 </script>
 
 {#if items.length > 0}
